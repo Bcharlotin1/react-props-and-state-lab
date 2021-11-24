@@ -25,20 +25,20 @@ class App extends React.Component {
   }
 
   getPets = ()=>{
-    const type = this.state.filters.type 
-    let url = ''
-    if (type === 'all'){
-      url = '/api/pets'
+    
+    let url = '/api/pets'
+    if(this.state.filters.type !== 'all'){
+      url += `?type=${this.state.filters.type}`
     }
-    if(type === 'cat'){
-      url = '/api/pets?type=cat'
-    }
-    if(type === 'dog'){
-      url = '/api/pets?type=dog'
-    }
-    if(type === 'micropig'){
-      url = '/api/pets?type=micropig'
-    }
+    // if(type === 'cat'){
+    //   url = '/api/pets?type=cat'
+    // }
+    // if(type === 'dog'){
+    //   url = '/api/pets?type=dog'
+    // }
+    // if(type === 'micropig'){
+    //   url = '/api/pets?type=micropig'
+    // }
     
     
     fetch(url)

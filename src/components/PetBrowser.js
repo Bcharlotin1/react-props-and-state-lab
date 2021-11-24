@@ -4,6 +4,7 @@ import Pet from './Pet'
 
 class PetBrowser extends React.Component {
   render() {
+    console.log(this.props.allPets)
     const petCards =
       this.props.allPets.map(petObj =>(
         <Pet
